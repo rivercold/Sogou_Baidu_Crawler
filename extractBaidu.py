@@ -10,7 +10,7 @@ def extractSogou(query):
     url += urllib2.quote(query)
     response = urllib2.urlopen(url,timeout=30)
     lines = response.read()
-    query_path = "./Sogou/"+query+".html"
+    query_path = "./Baidu/"+query+".html"
     write_file = open(query_path,'w')
     write_file.write(lines)
 
@@ -29,7 +29,7 @@ def extractBaidu(query):
 	write_file.write(html)
 
 error_log = open('error.txt','w')
-query_file = open("322_backup_query.txt","r")
+query_file = open("additional_query_file.txt","r")
 queries = query_file.readlines()
 count = 0
 for query in queries:

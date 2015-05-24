@@ -24,13 +24,13 @@ def extractSogou(query):
 	resp = urllib2.urlopen(req,None,req_timeout)
 	html = resp.read()
 	#print html
-	query_path = query+".html"
+	query_path = "./Sogou/"+query+".html"
 	write_file = open(query_path,'w')
 	write_file.write(html)
 
 
 error_log = open('error_sogou.txt','w')
-query_file = open("test_query.txt","r")
+query_file = open("additional_query_file.txt","r")
 queries = query_file.readlines()
 count = 0
 for query in queries:
