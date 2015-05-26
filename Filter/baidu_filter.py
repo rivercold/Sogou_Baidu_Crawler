@@ -33,11 +33,12 @@ count = 0
 
 for f in os.listdir(path):
 	count += 1
-	if count > 330:
-		break
+	if f == ".DS_Store":
+		continue
+
 	html = open(path+f,"r").read()
 	soup = BeautifulSoup(html)
-	write_file = open("./Baidu_filter/"+f,"w")
+	write_file = open("./Baidu/"+f,"w")
 	# result logo 
 	#result_logo = soup.find("a",id="result_logo")
 	#result_logo.extract()
